@@ -38,7 +38,8 @@ class TradieController extends Controller
             }
             return $index->search('', [
                 'aroundLatLng' => "$lat,$lon",
-                'aroundRadius' => $limit
+                'aroundRadius' => $limit,
+                'hitsPerPage' => 3000
             ]);
         }
 
