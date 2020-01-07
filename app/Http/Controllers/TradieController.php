@@ -31,6 +31,11 @@ class TradieController extends Controller
             $lon = $request->lon;
             $limit = $request->limit;
 
+            if(!$request->lat || !$request->lon) {
+                return $index->search('', [
+                    'hitsPerPage' => 3000
+                ]);
+            }
             return $index->search('', [
                 'aroundLatLng' => "$lat,$lon",
                 'aroundRadius' => $limit
