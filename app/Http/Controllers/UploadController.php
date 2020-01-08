@@ -25,7 +25,11 @@ class UploadController extends Controller
             );
 
             $index = $client->initIndex('your_index_name');
-
+            $index->setSettings([
+                'attributesForFaceting' => [
+                    "Trade" // or "filterOnly(brand)" for filtering purposes only
+                ]
+            ]);
             $index->saveObjects($request->tradies, ['autoGenerateObjectIDIfNotExist' => true]);
         }
 
