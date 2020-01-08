@@ -40,7 +40,7 @@ class TradieController extends Controller
                 'aroundLatLng' => "$lat,$lon",
                 'aroundRadius' => $limit,
                 'hitsPerPage' => 3000,
-                'filters' => 'Trade:'. $request->trade ?? ''
+                'filters' => $request->trade ? 'Trade:'. $request->trade ?? '' : ''
             ]);
         }
 
