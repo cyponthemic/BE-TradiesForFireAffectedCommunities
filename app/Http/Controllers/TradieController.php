@@ -32,11 +32,11 @@ class TradieController extends Controller
             $limit = $request->limit;
 
             if(!$request->lat || !$request->lon) {
-                return $index->search('', [
+                return $index->search($request->trade ?? '', [
                     'hitsPerPage' => 3000
                 ]);
             }
-            return $index->search('', [
+            return $index->search($request->trade ?? '', [
                 'aroundLatLng' => "$lat,$lon",
                 'aroundRadius' => $limit,
                 'hitsPerPage' => 3000
