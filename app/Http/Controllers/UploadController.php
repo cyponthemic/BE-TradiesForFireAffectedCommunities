@@ -27,13 +27,10 @@ class UploadController extends Controller
             $index = $client->initIndex('your_index_name');
             $index->setSettings([
                 'searchableAttributes' => [
-                    'Trade',
-                ]
-            ]);
-
-            $index->setSettings([
+                    'Trade'
+                ],
                 'disableExactOnAttributes' => [
-                    'Trade',
+                    'Trade'
                 ]
             ]);
 

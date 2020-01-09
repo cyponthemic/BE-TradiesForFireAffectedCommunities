@@ -19,11 +19,16 @@ class TradieController extends Controller
 
             $index->setSettings([
                 'searchableAttributes' => [
-                    'Full Name',
-                    'Postcode'
+                    'Trade'
                 ],
                 'customRanking' => [
                     'desc(Postcode)'
+                ],
+                'searchableAttributes' => [
+                    'Trade'
+                ],
+                'disableExactOnAttributes' => [
+                    'Trade'
                 ]
             ]);
 
