@@ -37,6 +37,7 @@ class TradieController extends Controller
                     'Full Name',
                     'Company Name',
                     'Trade',
+                    '_geoloc',
                     'Postcode',
                     $request->password === $correct_password ? 'Email Address' : '',
                     $request->password === $correct_password ? 'Phone Number' : ''
