@@ -32,8 +32,6 @@ export default {
         geoTradies() {
             return this.data.map((tradie) => {
                 tradie._geoloc = this.postcodes[trim(tradie.Postcode)] || {}
-                delete tradie['Email Address']
-                delete tradie['Phone Number']
                 return tradie
             })
         },

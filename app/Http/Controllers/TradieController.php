@@ -9,6 +9,8 @@ use Illuminate\Http\Request as RequestAlias;
 class TradieController extends Controller
 {
     public function index(RequestAlias $request) {
+        $correct_password = env('FIND_PASSWORD');
+
         try {
             $client = \Algolia\AlgoliaSearch\SearchClient::create(
                 'AVG184MB5R',
@@ -29,6 +31,15 @@ class TradieController extends Controller
                 ],
                 'disableExactOnAttributes' => [
                     'Trade'
+                ],
+                'attributesToRetrieve' => [
+                    'Timestamp',
+                    'Full Name',
+                    'Company Name',
+                    'Trade',
+                    'Postcode',
+                    $request->password === $correct_password ? 'Email Address' : '',
+                    $request->password === $correct_password ? 'Phone Number' : ''
                 ]
             ]);
 

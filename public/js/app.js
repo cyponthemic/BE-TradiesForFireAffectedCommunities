@@ -1931,8 +1931,6 @@ __webpack_require__.r(__webpack_exports__);
 
       return this.data.map(function (tradie) {
         tradie._geoloc = _this.postcodes[Object(lodash_es__WEBPACK_IMPORTED_MODULE_2__["trim"])(tradie.Postcode)] || {};
-        delete tradie['Email Address'];
-        delete tradie['Phone Number'];
         return tradie;
       });
     },
