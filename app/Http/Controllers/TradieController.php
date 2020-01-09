@@ -36,7 +36,7 @@ class TradieController extends Controller
                     'hitsPerPage' => 3000
                 ]);
             }
-            return $index->search('', [
+            return $index->search($request->searchQuery ?? '', [
                 'aroundLatLng' => "$lat,$lon",
                 'aroundRadius' => $limit,
                 'hitsPerPage' => 3000,
