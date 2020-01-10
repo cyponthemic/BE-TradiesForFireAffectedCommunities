@@ -31,6 +31,14 @@ class TradieController extends Controller
                 ],
                 'disableExactOnAttributes' => [
                     'Trade'
+                ],
+                'attributesToRetrieve' => [
+                    'Timestamp',
+                    'Full Name',
+                    'Company Name',
+                    'Trade',
+                    '_geoloc',
+                    'Postcode'
                 ]
             ]);
 
