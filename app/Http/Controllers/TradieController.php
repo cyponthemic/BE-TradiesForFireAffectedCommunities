@@ -31,16 +31,6 @@ class TradieController extends Controller
                 ],
                 'disableExactOnAttributes' => [
                     'Trade'
-                ],
-                'attributesToRetrieve' => [
-                    'Timestamp',
-                    'Full Name',
-                    'Company Name',
-                    'Trade',
-                    '_geoloc',
-                    'Postcode',
-                    $request->password === $correct_password ? 'Email Address' : '',
-                    $request->password === $correct_password ? 'Phone Number' : ''
                 ]
             ]);
 
@@ -57,7 +47,17 @@ class TradieController extends Controller
                 'aroundLatLng' => "$lat,$lon",
                 'aroundRadius' => $limit,
                 'hitsPerPage' => 3000,
-                'filters' => $request->trade ? 'Trade:'. $request->trade ?? '' : ''
+                'filters' => $request->trade ? 'Trade:'. $request->trade ?? '' : '',
+                'attributesToRetrieve' => [
+                    'Timestamp',
+                    'Full Name',
+                    'Company Name',
+                    'Trade',
+                    '_geoloc',
+                    'Postcode',
+                    $request->password === $correct_password ? 'Email Address' : '',
+                    $request->password === $correct_password ? 'Phone Number' : ''
+                ]
             ]);
         }
 

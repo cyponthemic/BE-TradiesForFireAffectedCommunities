@@ -32,6 +32,7 @@ export default {
         geoTradies() {
             return this.data.map((tradie) => {
                 tradie._geoloc = this.postcodes[trim(tradie.Postcode)] || {}
+                tradie.state = this.postcodes[trim(tradie.Postcode)] || {}
                 return tradie
             })
         },
