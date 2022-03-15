@@ -24,7 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "lodash-es": "^4.17.15",
+        "lodash-es": "^4.17.21",
         "papaparse": "^5.1.1"
     }
 }
